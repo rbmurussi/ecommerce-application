@@ -1,0 +1,41 @@
+{
+  "generator-jhipster": {
+    "applicationType": "monolith",
+    "gitCompany": "",
+    "baseName": "EcommerceApplication",
+    "packageName": "com.rbmurussi.ecommerce.application",
+    "packageFolder": "com/rbmurussi/ecommerce/application",
+    "serverPort": 8080,
+    "serviceDiscoveryType": false,
+    "authenticationType": "session",
+    "uaaBaseName": "../uaa",
+    "cacheProvider": "ehcache",
+    "enableHibernateCache": false,
+    "websocket": false,
+    "databaseType": "mongodb",
+    "devDatabaseType": "mongodb",
+    "prodDatabaseType": "mongodb",
+    "searchEngine": false,
+    "enableSwaggerCodegen": false,
+    "messageBroker": false,
+    "buildTool": "maven",
+    "useSass": true,
+    "clientPackageManager": "npm",
+    "testFrameworks": [],
+    "enableTranslation": true,
+    "nativeLanguage": "pt-br",
+    "languages": [
+      "en",
+      "es",
+      "pt-br"
+    ],
+    "clientFramework": "react",
+    "jhiPrefix": "jhi",
+    "jhipsterVersion": "5.7.2",
+    "rememberMeKey": "9180d56dbb1b7f5e9318ff9c6196b7c4baeeb3e11060dba9abca19e53ca276edbce1117242f33701fd71c5515184176e92f3",
+    "otherModules": []
+  },
+  "git-provider": "GitHub",
+  "git-company": "rbmurussi",
+  "repository-name": "ecommerce-application"
+}
