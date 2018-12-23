@@ -1,0 +1,91 @@
+entity Exemple {
+	typeString String,
+	typeInteger Integer,
+	typeLong Long,
+	typeBigDecimal BigDecimal,
+	typeLocalDate LocalDate,
+	typeInstant Instant,
+	typeImageBlob ImageBlob,
+	typeTextBlob TextBlob,
+	typeAnyBlob AnyBlob,
+	typeBlob Blob
+}
+
+entity Product {
+	code Long required,
+	title String required,
+	subTitle String,
+	ncm String required,
+	nve String,
+	cest String,
+	identityDocumentManufacturerMerchandise String,
+	extipi String,
+	cfop String,
+	commercialEan String,
+    commercialUnit String,
+	commercialQuantity Integer,
+	commercialPrice BigDecimal required,
+	taxableEan String,
+    taxableUnit String,
+	taxableQuantity Integer,
+	taxablePrice BigDecimal,
+	discount BigDecimal,
+	description TextBlob
+}
+
+entity PersonalInformation {
+	fullName String required,
+	gender GenderEnum,
+	mobilePhone String,
+	birthday LocalDate,
+	identityDocument String,
+	socialReason String,
+	fantasyName String,
+	stateRegistration String,
+	stateRegistrationTaxReplacement String,
+	municipalRegistration String,
+	inscriptionSuframa String,
+	classificationNationalEconomicActivities String,
+	taxRegime RegimeTributarioEnum,
+	email String
+}
+
+enum GenderEnum {
+	PRIVATE, FEMALE, MALE
+}
+
+enum RegimeTributarioEnum {
+	SIMPLES_NACIONAL, SIMPLES_NACIONAL_EXCESSO_RECEITA, NORMAL
+}
+
+entity Address {
+	firstName String,
+	lastName String,
+	emailAddress String required,
+	postalCodeZIP String required,
+	districtSector String,
+	addressLine1 String,
+	addressline2 String,
+	placeNumber String,
+	codeIbgeCountry Integer,
+	descriptionCountry String,
+	codeIbgeStateCountry Integer,
+	descriptionStateCountry String,
+	codeIbgeCity Integer,
+	descriptionCity String,
+	phoneNumber String,
+	makeThisMyDefaultAddress Boolean
+}
+
+// Set pagination options
+paginate Exemple, PersonalInformation, AddressBook with infinite-scroll
+paginate Product with pagination
+
+// Use Data Transfert Objects (DTO)
+// dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl
+
+search Product with elasticsearch
+
