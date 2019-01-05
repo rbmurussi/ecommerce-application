@@ -1,0 +1,90 @@
+entity Exemple {
+	typeString String,
+	typeInteger Integer,
+	typeLong Long,
+	typeBigDecimal BigDecimal,
+	typeLocalDate LocalDate,
+	typeInstant Instant,
+	typeImageBlob ImageBlob,
+	typeTextBlob TextBlob,
+	typeAnyBlob AnyBlob,
+	typeBlob Blob
+}
+
+entity Product {
+	code Long unique required,
+	title String required pattern("(?!<script)\*[a-z0-9\_]+\*(?!</script>)"),
+	subTitle String pattern("(?!<script)\*[a-z0-9\_]+\*(?!</script>)"),
+	ncm Integer required,
+	nve String pattern("^[a-zA-Z0-9]+$"),
+	cest String pattern("^[a-zA-Z0-9]+$"),
+	identityDocumentManufacturerMerchandise String pattern("^\d{2}\x2E\d{3}\x2E\d{3}\x2F\d{4}\x2D\d{2}$"),
+	extipi String pattern("^[a-zA-Z0-9]+$"),
+	cfop Integer required,
+	commercialEan String unique pattern("^[a-zA-Z0-9]+$"),
+    commercialUnit String pattern("^[A-Z]+$"),
+	commercialPrice BigDecimal required,
+	commercialDiscount BigDecimal,
+    taxableEan String unique pattern("^[a-zA-Z0-9]+$"),
+    taxableUnit String pattern("^[A-Z]+$"),
+	taxablePrice BigDecimal,
+    taxableDiscount BigDecimal,
+	description TextBlob
+}
+
+entity PersonalInformation {
+	fullName String required pattern("(?!<script)\*[a-z0-9\_]+\*(?!</script>)"),
+	gender GenderEnum,
+	mobilePhone String pattern("(?!<script)\*[a-z0-9\_]+\*(?!</script>)"),
+	birthday LocalDate,
+	identityDocument String pattern("^\d{3}\x2E\d{3}\x2E\d{3}\x2D\d{2}$|^\d{2}\x2E\d{3}\x2E\d{3}\x2F\d{4}\x2D\d{2}$"),
+	socialReason String pattern("(?!<script)\*[a-z0-9\_]+\*(?!</script>)"),
+	fantasyName String pattern("(?!<script)\*[a-z0-9\_]+\*(?!</script>)"),
+	stateRegistration String pattern("^[a-zA-Z0-9\s]*$"),
+	stateRegistrationTaxReplacement String pattern("^[a-zA-Z0-9\s]*$"),
+	municipalRegistration String pattern("^[a-zA-Z0-9\s]*$"),
+	inscriptionSuframa String pattern("^[a-zA-Z0-9\s]*$"),
+	classificationNationalEconomicActivities String pattern("^[a-zA-Z0-9\s]*$"),
+	taxRegime TaxRegimeEnum,
+	email String pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$")
+}
+
+enum GenderEnum {
+	PRIVATE, FEMALE, MALE
+}
+
+enum TaxRegimeEnum {
+    SIMPLE_NATIONAL, SIMPLE_NATIONAL_EXCESS_REVENUE, NORMAL
+}
+
+entity Address {
+	firstName String pattern("(?!<script)\*[a-z0-9\_]+\*(?!</script>)"),
+	lastName String pattern("(?!<script)\*[a-z0-9\_]+\*(?!</script>)"),
+	emailAddress String required pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"),
+	postalCodeZIP String required pattern("(?!<script)\*[a-z0-9\_]+\*(?!</script>)"),
+	neighborhood String pattern("(?!<script)\*[a-z0-9\_]+\*(?!</script>)"),
+	addressLine1 String pattern("(?!<script)\*[a-z0-9\_]+\*(?!</script>)"),
+	addressline2 String pattern("(?!<script)\*[a-z0-9\_]+\*(?!</script>)"),
+	locationNumber String pattern("(?!<script)\*[a-z0-9\_]+\*(?!</script>)"),
+	codeIbgeCountry Integer,
+	descriptionCountry String pattern("(?!<script)\*[a-z0-9\_]+\*(?!</script>)"),
+	codeIbgeStateCountry Integer,
+	descriptionStateCountry String pattern("(?!<script)\*[a-z0-9\_]+\*(?!</script>)"),
+	codeIbgeCity Integer,
+	descriptionCity String pattern("(?!<script)\*[a-z0-9\_]+\*(?!</script>)"),
+	phoneNumber String pattern("(?!<script)\*[a-z0-9\_]+\*(?!</script>)"),
+    makeThisMyDefaultAddressLocal Boolean,
+	makeThisMyDefaultAddressDelivery Boolean
+}
+
+// Set pagination options
+paginate Exemple, PersonalInformation, AddressBook with infinite-scroll
+//paginate Product with pagination
+
+// Use Data Transfert Objects (DTO)
+// dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl
+
+search Product with elasticsearch
