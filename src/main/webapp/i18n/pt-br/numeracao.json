@@ -1,0 +1,26 @@
+{
+  "ecommerceApplicationApp": {
+    "numeracao": {
+      "home": {
+        "title": "Numeracaos",
+        "createLabel": "Criar novo Numeracao",
+        "createOrEditLabel": "Criar ou editar Numeracao"
+      },
+      "created": "Um novo Numeracao foi criado com o identificador {{ param }}",
+      "updated": "Um Numeracao foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Numeracao foi deletado com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Numeracao {{ id }}?"
+      },
+      "detail": {
+        "title": "Numeracao"
+      },
+      "idNumeracao": "Id Numeracao",
+      "serie": "Serie",
+      "numero": "Numero",
+      "ano": "Ano",
+      "dataSistema": "Data Sistema",
+      "idEmitente": "Id Emitente"
+    }
+  }
+}

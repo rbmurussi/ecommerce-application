@@ -1,0 +1,27 @@
+{
+  "ecommerceApplicationApp": {
+    "inutilizacao": {
+      "home": {
+        "title": "Inutilizacaos",
+        "createLabel": "Create a new Inutilizacao",
+        "createOrEditLabel": "Create or edit a Inutilizacao"
+      },
+      "created": "A new Inutilizacao is created with identifier {{ param }}",
+      "updated": "A Inutilizacao is updated with identifier {{ param }}",
+      "deleted": "A Inutilizacao is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Inutilizacao {{ id }}?"
+      },
+      "detail": {
+        "title": "Inutilizacao"
+      },
+      "idInutilizacao": "Id Inutilizacao",
+      "idEmitente": "Id Emitente",
+      "serie": "Serie",
+      "numeroInicial": "Numero Inicial",
+      "numeroFinal": "Numero Final",
+      "protocoloXml": "Protocolo Xml",
+      "dataInutilizacao": "Data Inutilizacao"
+    }
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "ecommerceApplicationApp": {
+    "notaFiscal": {
+      "home": {
+        "title": "Nota Fiscals",
+        "createLabel": "Criar novo Nota Fiscal",
+        "createOrEditLabel": "Criar ou editar Nota Fiscal"
+      },
+      "created": "Um novo Nota Fiscal foi criado com o identificador {{ param }}",
+      "updated": "Um Nota Fiscal foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Nota Fiscal foi deletado com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Nota Fiscal {{ id }}?"
+      },
+      "detail": {
+        "title": "Nota Fiscal"
+      },
+      "idNotalFiscal": "Id Notal Fiscal",
+      "numero": "Numero",
+      "serie": "Serie",
+      "modelo": "Modelo",
+      "situacao": "Situacao",
+      "mes": "Mes",
+      "ano": "Ano",
+      "tipoEmissao": "Tipo Emissao",
+      "dataEmissao": "Data Emissao",
+      "dataAutorizacao": "Data Autorizacao",
+      "codigoNumericoChaveAcesso": "Codigo Numerico Chave Acesso",
+      "digitoChaveAcesso": "Digito Chave Acesso",
+      "autorizacaoExportadaXML": "Autorizacao Exportada XML",
+      "documentoDest": "Documento Dest",
+      "uFDest": "U F Dest",
+      "numeroRecibo": "Numero Recibo",
+      "danfeImpresso": "Danfe Impresso",
+      "docXML": "Doc XML",
+      "dataSistema": "Data Sistema",
+      "protocolo": "Protocolo",
+      "numeroProtocolo": "Numero Protocolo",
+      "dataProtocolo": "Data Protocolo",
+      "codigoUFEmitente": "Codigo UF Emitente",
+      "idEmitente": "Id Emitente",
+      "idLote": "Id Lote",
+      "codigoErro": "Codigo Erro",
+      "mensagemErro": "Mensagem Erro",
+      "versao": "Versao"
+    }
+  }
+}

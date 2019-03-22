@@ -1,0 +1,40 @@
+{
+  "ecommerceApplicationApp": {
+    "cliente": {
+      "home": {
+        "title": "Clientes",
+        "createLabel": "Create a new Cliente",
+        "createOrEditLabel": "Create or edit a Cliente"
+      },
+      "created": "A new Cliente is created with identifier {{ param }}",
+      "updated": "A Cliente is updated with identifier {{ param }}",
+      "deleted": "A Cliente is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Cliente {{ id }}?"
+      },
+      "detail": {
+        "title": "Cliente"
+      },
+      "tpDocumentoEnum": "Tp Documento Enum",
+      "idCliente": "Id Cliente",
+      "nrDocumento": "Nr Documento",
+      "xNome": "X Nome",
+      "xLgr": "X Lgr",
+      "nRo": "N Ro",
+      "xCpl": "X Cpl",
+      "xBairro": "X Bairro",
+      "xMun": "X Mun",
+      "cMun": "C Mun",
+      "uF": "U F",
+      "cEP": "C EP",
+      "cPais": "C Pais",
+      "xPais": "X Pais",
+      "fone": "Fone",
+      "email": "Email",
+      "idEmitente": "Id Emitente",
+      "iE": "I E",
+      "iESUF": "I ESUF",
+      "versao": "Versao"
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "ecommerceApplicationApp": {
+    "propriedade": {
+      "home": {
+        "title": "Propriedades",
+        "createLabel": "Criar novo Propriedade",
+        "createOrEditLabel": "Criar ou editar Propriedade"
+      },
+      "created": "Um novo Propriedade foi criado com o identificador {{ param }}",
+      "updated": "Um Propriedade foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Propriedade foi deletado com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Propriedade {{ id }}?"
+      },
+      "detail": {
+        "title": "Propriedade"
+      },
+      "idPropriedade": "Id Propriedade",
+      "propriedadeEnum": "Propriedade Enum",
+      "valor": "Valor",
+      "idEmitente": "Id Emitente"
+    }
+  }
+}

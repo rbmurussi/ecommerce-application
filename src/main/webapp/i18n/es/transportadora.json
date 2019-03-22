@@ -1,0 +1,30 @@
+{
+  "ecommerceApplicationApp": {
+    "transportadora": {
+      "home": {
+        "title": "Transportadoras",
+        "createLabel": "Crear nuevo Transportadora",
+        "createOrEditLabel": "Crear o editar Transportadora"
+      },
+      "created": "Un nuevo Transportadora ha sido creado con el identificador {{ param }}",
+      "updated": "Un Transportadora ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Transportadora ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Transportadora {{ id }}?"
+      },
+      "detail": {
+        "title": "Transportadora"
+      },
+      "idTransportadora": "Id Transportadora",
+      "tpDocumentoEnum": "Tp Documento Enum",
+      "nrDocumento": "Nr Documento",
+      "xNome": "X Nome",
+      "iE": "I E",
+      "xEnder": "X Ender",
+      "uF": "U F",
+      "xMun": "X Mun",
+      "idEmitente": "Id Emitente",
+      "versao": "Versao"
+    }
+  }
+}

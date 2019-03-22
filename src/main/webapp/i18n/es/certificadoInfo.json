@@ -1,0 +1,30 @@
+{
+  "ecommerceApplicationApp": {
+    "certificadoInfo": {
+      "home": {
+        "title": "Certificado Infos",
+        "createLabel": "Crear nuevo Certificado Info",
+        "createOrEditLabel": "Crear o editar Certificado Info"
+      },
+      "created": "Un nuevo Certificado Info ha sido creado con el identificador {{ param }}",
+      "updated": "Un Certificado Info ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Certificado Info ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Certificado Info {{ id }}?"
+      },
+      "detail": {
+        "title": "Certificado Info"
+      },
+      "idCertificadoInfo": "Id Certificado Info",
+      "idEmitente": "Id Emitente",
+      "alias": "Alias",
+      "nome": "Nome",
+      "autoridadeCertificadora": "Autoridade Certificadora",
+      "cNPJ": "C NPJ",
+      "caminho": "Caminho",
+      "tipoCertificado": "Tipo Certificado",
+      "dataUtilizacao": "Data Utilizacao",
+      "dataValidade": "Data Validade"
+    }
+  }
+}

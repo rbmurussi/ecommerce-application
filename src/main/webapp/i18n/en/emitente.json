@@ -1,0 +1,43 @@
+{
+  "ecommerceApplicationApp": {
+    "emitente": {
+      "home": {
+        "title": "Emitentes",
+        "createLabel": "Create a new Emitente",
+        "createOrEditLabel": "Create or edit a Emitente"
+      },
+      "created": "A new Emitente is created with identifier {{ param }}",
+      "updated": "A Emitente is updated with identifier {{ param }}",
+      "deleted": "A Emitente is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Emitente {{ id }}?"
+      },
+      "detail": {
+        "title": "Emitente"
+      },
+      "idEmitente": "Id Emitente",
+      "xNome": "X Nome",
+      "xFant": "X Fant",
+      "xLgr": "X Lgr",
+      "nRo": "N Ro",
+      "xCpl": "X Cpl",
+      "xBairro": "X Bairro",
+      "cMun": "C Mun",
+      "xMun": "X Mun",
+      "uF": "U F",
+      "cEP": "C EP",
+      "cPais": "C Pais",
+      "xPais": "X Pais",
+      "fone": "Fone",
+      "iE": "I E",
+      "iEST": "I EST",
+      "iM": "I M",
+      "cNAE": "C NAE",
+      "logotipo": "Logotipo",
+      "tpDocumentoEnum": "Tp Documento Enum",
+      "nrDocumento": "Nr Documento",
+      "regimeTributario": "Regime Tributario",
+      "versao": "Versao"
+    }
+  }
+}
