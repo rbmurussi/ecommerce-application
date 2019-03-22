@@ -1,0 +1,306 @@
+entity Controleversao
+{
+  /*primary key*/
+  idControleversao  Integer      required,
+  /*unique*/
+  numversaoEnum     Integer      required,
+  dataversao        LocalDate    required
+}
+
+entity Emitente
+{
+  /*primary key*/
+  idEmitente       Integer                    required,
+  xNome            String maxlength(60)       required,
+  xFant            String maxlength(60),
+  xLgr             String maxlength(60)       required,
+  nRo              String maxlength(60)       required,
+  xCpl             String maxlength(60),
+  xBairro          String maxlength(60)       required,
+  cMun             String maxlength(7)        required,
+  xMun             String maxlength(60)       required,
+  UF               String maxlength(2)        required,
+  CEP              String maxlength(8),
+  cPais            String maxlength(4),
+  xPais            String maxlength(60),
+  fone             String maxlength(14),
+  IE               String maxlength(14)       required,
+  IEST             String maxlength(14),
+  IM               String maxlength(15),
+  CNAE             String maxlength(7),
+  logotipo         ImageBlob,
+  tpDocumentoEnum  Integer                    required,
+  /*unique*/
+  nrDocumento      String maxlength(14)       required,
+  regimeTributario String maxlength(4)        required,
+  versao           String maxlength(60)       required
+}
+
+entity CertificadoInfo
+{
+  /*primary key*/
+  idCertificadoInfo        Integer                required,
+  /*references Emitente*/
+  idEmitente               Integer                required,
+  alias                    String maxlength(255)  required,
+  nome                     String maxlength(255)  required,
+  autoridadeCertificadora  String maxlength(255)  required,
+  CNPJ                     String maxlength(14)   required,
+  caminho                  String maxlength(255)  required,
+  tipoCertificado          String maxlength(2)    required,
+  dataUtilizacao           ZonedDateTime,
+  dataValidade             ZonedDateTime          required
+}
+
+entity Cliente
+{
+  tpDocumentoEnum Integer,
+  /*primary key*/
+  idCliente        Integer                    required,
+  nrDocumento      String maxlength(14),
+  xNome            String maxlength(60)       required,
+  xLgr             String maxlength(60),
+  nRo              String maxlength(60),
+  xCpl             String maxlength(60),
+  xBairro          String maxlength(60),
+  xMun             String maxlength(60),
+  cMun             String maxlength(7),
+  UF               String maxlength(2),
+  CEP              String maxlength(8),
+  cPais            String maxlength(4),
+  xPais            String maxlength(60),
+  fone             String maxlength(14),
+  email            String maxlength(60),
+  /*references Emitente*/
+  idEmitente       Integer                    required,
+  IE               String maxlength(14),
+  IESUF            String maxlength(9),
+  /*default '1.02'*/
+  versao           String maxlength(60)       required
+}
+
+entity Generator
+{
+  /*primary key*/
+  genKey   String maxlength(50)      required,
+  genValue Integer                   required
+}
+
+/*unique {idEmitente, SERIE, NUMERO_INICIAL, NUMERO_FINAL}*/
+entity Inutilizacao
+{
+  /*primary key*/
+  idInutilizacao   Long                required,
+  /*references Emitente*/
+  idEmitente       Integer             required,
+  serie            String maxlength(3) required,
+  numeroInicial    String maxlength(9) required,
+  numeroFinal      String maxlength(9) required,
+  protocoloXml     Blob,
+  dataInutilizacao ZonedDateTime
+}
+
+entity Lote
+{
+  /*primary key*/
+  idLote          Long                  required,
+  CNPJTransmissao String maxlength(20)  required,
+  dataTransmissao ZonedDateTime         required,
+  numRecibo       String maxlength(15),
+  xmlRetorno      Blob,
+  dataProc        ZonedDateTime
+}
+
+/*unique {NUMERO, SERIE, ANO, idEmitente}*/
+entity NotaFiscal
+{
+  /*primary key*/
+  idNotalFiscal                Long                         required,
+  numero                       String maxlength(9)          required,
+  serie                        String maxlength(3)          required,
+  modelo                       String maxlength(2)          required,
+  situacao                     String maxlength(100)        required,
+  mes                          String maxlength(2)          required,
+  ano                          String maxlength(2)          required,
+  tipoEmissao                  String maxlength(100),
+  dataEmissao                  ZonedDateTime,
+  dataAutorizacao              ZonedDateTime,
+  codigoNumericoChaveAcesso    String maxlength(9),
+  digitoChaveAcesso            String maxlength(1),
+  /*default '0'*/
+  autorizacaoExportadaXML      String maxlength(1)          required,
+  documentoDest                String maxlength(20),
+  UFDest                       String maxlength(2),
+  numeroRecibo                 String maxlength(15),
+  /*default '0'*/
+  danfeImpresso                String maxlength(1)          required,
+  docXML                       Blob,
+  dataSistema                  ZonedDateTime,
+  protocolo                    Blob,
+  numeroProtocolo              String maxlength(15),
+  dataProtocolo                ZonedDateTime,
+  codigoUFEmitente             String maxlength(2)          required,
+  /*references Emitente*/
+  idEmitente                   Integer                      required,
+  /*references LOTE*/
+  idLote                       Long,
+  codigoErro                   String maxlength(3),
+  mensagemErro                 String maxlength(255),
+  versao                       String maxlength(10)         required
+}
+
+/*create unique index SQL170722093706461 on CANCELAMENTO {idNotalFiscal}*/
+entity Cancelamento
+{
+  /*primary key references NotaFiscal*/
+  idNotalFiscal    Long                  required,
+  numeroProtocolo  String maxlength(15)  required,
+  protocolo        Blob required,
+  dataProtocolo    ZonedDateTime         required,
+  codigoErro       String maxlength(3),
+  mensagemErro     String maxlength(255),
+  justificativa    String maxlength(255)
+}
+
+entity Evento
+{
+  /*primary key*/
+  idEvento        Long                  required,
+  /*references NotaFiscal*/
+  idNotalFiscal   Long                  required,
+  tpEvento        String maxlength(7)   required,
+  nSeqEvento      Integer               required,
+  dataEvento      ZonedDateTime,
+  numProtocolo    String maxlength(15),
+  XmlProc         Blob                  required,
+  dataRegEvento   ZonedDateTime
+}
+
+/*unique {SERIE, ANO, idEmitente}*/
+entity Numeracao
+{
+  /*primary key*/
+  idNumeracao  Integer             required,
+  serie        String maxlength(3) required,
+  numero       String maxlength(9) required,
+  ano          String maxlength(2) required,
+  dataSistema  ZonedDateTime,
+  /*references Emitente*/
+  idEmitente   Integer             required
+}
+
+entity Parametros
+{
+  /*primary key*/
+  parametrosEnum  Integer                required,
+  valor           String maxlength(255)
+}
+
+/*unique {idEmitente, CAMPO_ENUM, TELA_ENUM}*/
+entity Pesquisa
+{
+  /*primary key*/
+  idPesquisa  Integer required,
+  campoEnum   Integer required,
+  valor       String maxlength(120),
+  /*references Emitente*/
+  idEmitente  Integer required,
+  telaEnum    Integer required
+}
+
+/*unique {idEmitente, C_PROD}*/
+entity Produto
+{
+  cProd       String maxlength(60)       required,
+  /*primary key*/
+  idProduto   Integer                    required,
+  xProd       String maxlength(120)      required,
+  cEAN        String maxlength(14),
+  NCM         String maxlength(8),
+  exTipi      String maxlength(3),
+  genero      String maxlength(2),
+  uCom        String maxlength(6),
+  cEANTrib    String maxlength(14),
+  uTrib       String maxlength(6),
+  vUNCom      String maxlength(17),
+  vUNTrib     String maxlength(17),
+  qTrib       String maxlength(20),
+  /*references Emitente*/
+  idEmitente  Integer                    required,
+  /*default '1.02'*/
+  versao      String maxlength(60)       required,
+  cest        String maxlength(7)
+}
+
+/*unique {ID_Produto, CST}*/
+entity Icms
+{
+  /*primary key*/
+  idIcms       Integer               required,
+  orig         String maxlength(2),
+  /*references Produto*/
+  idProduto    Integer               required,
+  cst          String maxlength(7)   required,
+  modBc        String maxlength(2),
+  pREDBC      String maxlength(6),
+  pICMS        String maxlength(6),
+  modBCST      String maxlength(2),
+  pMVAST       String maxlength(6),
+  pRedBCST     String maxlength(6),
+  pICMSST      String maxlength(6),
+  motDesICMS   String maxlength(2),
+  pBCOP        String maxlength(6),
+  UFST         String maxlength(2),
+  pCredSN      String maxlength(6)
+}
+
+/* create unique index SQL170722093706252 on IPI {ID_Produto} */
+entity Ipi
+{
+  /*primary key*/
+  idIpi     Integer               required,
+  clEnq     String maxlength(5),
+  CNPJProd  String maxlength(14),
+  cEnq      String maxlength(3),
+  /*unique references Produto*/
+  idProduto Integer               required
+}
+
+/* unique {PROPRIEDADE_ENUM, idEmitente} */
+entity Propriedade
+{
+  /*primary key*/
+  idPropriedade    Integer                 required,
+  propriedadeEnum  Integer                 required,
+  valor            String maxlength(255),
+  /*references Emitente*/
+  idEmitente       Integer                 required
+}
+
+entity Transportadora
+{
+  /*primary key*/
+  idTransportadora  Integer                    required,
+  tpDocumentoEnum   Integer,
+  nrDocumento       String maxlength(15),
+  xNome             String maxlength(60)       required,
+  IE                String maxlength(14),
+  xEnder            String maxlength(60),
+  UF                String maxlength(2),
+  xMun              String maxlength(60),
+  /*references Emitente*/
+  idEmitente        Integer                    required,
+  versao            String maxlength(60)       required
+}
+
+// Use Data Transfert Objects {DTO}
+// dto * with mapstruct
+
+// Set service options to all except few
+//service all with serviceImpl except 
+
+// Set pagination options
+paginate Produto, Ipi, Icms with infinite-scroll
+paginate Emitente, CertificadoInfo, Cliente, NotaFiscal, Transportadora with pagination
+search Produto with elasticsearch
+
