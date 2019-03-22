@@ -1,0 +1,25 @@
+{
+  "ecommerceApplicationApp": {
+    "pesquisa": {
+      "home": {
+        "title": "Pesquisas",
+        "createLabel": "Crear nuevo Pesquisa",
+        "createOrEditLabel": "Crear o editar Pesquisa"
+      },
+      "created": "Un nuevo Pesquisa ha sido creado con el identificador {{ param }}",
+      "updated": "Un Pesquisa ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Pesquisa ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Pesquisa {{ id }}?"
+      },
+      "detail": {
+        "title": "Pesquisa"
+      },
+      "idPesquisa": "Id Pesquisa",
+      "campoEnum": "Campo Enum",
+      "valor": "Valor",
+      "idEmitente": "Id Emitente",
+      "telaEnum": "Tela Enum"
+    }
+  }
+}

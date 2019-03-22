@@ -1,0 +1,137 @@
+import React from 'react';
+import { connect } from 'react-redux';
+import { Link, RouteComponentProps } from 'react-router-dom';
+import { Button, Col, Row, Table } from 'reactstrap';
+// tslint:disable-next-line:no-unused-variable
+import { openFile, byteSize, Translate, ICrudGetAllAction, TextFormat } from 'react-jhipster';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+import { IRootState } from 'app/shared/reducers';
+import { getEntities } from './lote.reducer';
+import { ILote } from 'app/shared/model/lote.model';
+// tslint:disable-next-line:no-unused-variable
+import { APP_DATE_FORMAT, APP_LOCAL_DATE_FORMAT } from 'app/config/constants';
+
+export interface ILoteProps extends StateProps, DispatchProps, RouteComponentProps<{ url: string }> {}
+
+export class Lote extends React.Component<ILoteProps> {
+  componentDidMount() {
+    this.props.getEntities();
+  }
+
+  render() {
+    const { loteList, match } = this.props;
+    return (
+      <div>
+        <h2 id="lote-heading">
+          <Translate contentKey="ecommerceApplicationApp.lote.home.title">Lotes</Translate>
+          <Link to={`${match.url}/new`} className="btn btn-primary float-right jh-create-entity" id="jh-create-entity">
+            <FontAwesomeIcon icon="plus" />&nbsp;
+            <Translate contentKey="ecommerceApplicationApp.lote.home.createLabel">Create new Lote</Translate>
+          </Link>
+        </h2>
+        <div className="table-responsive">
+          <Table responsive>
+            <thead>
+              <tr>
+                <th>
+                  <Translate contentKey="global.field.id">ID</Translate>
+                </th>
+                <th>
+                  <Translate contentKey="ecommerceApplicationApp.lote.idLote">Id Lote</Translate>
+                </th>
+                <th>
+                  <Translate contentKey="ecommerceApplicationApp.lote.cNPJTransmissao">C NPJ Transmissao</Translate>
+                </th>
+                <th>
+                  <Translate contentKey="ecommerceApplicationApp.lote.dataTransmissao">Data Transmissao</Translate>
+                </th>
+                <th>
+                  <Translate contentKey="ecommerceApplicationApp.lote.numRecibo">Num Recibo</Translate>
+                </th>
+                <th>
+                  <Translate contentKey="ecommerceApplicationApp.lote.xmlRetorno">Xml Retorno</Translate>
+                </th>
+                <th>
+                  <Translate contentKey="ecommerceApplicationApp.lote.dataProc">Data Proc</Translate>
+                </th>
+                <th />
+              </tr>
+            </thead>
+            <tbody>
+              {loteList.map((lote, i) => (
+                <tr key={`entity-${i}`}>
+                  <td>
+                    <Button tag={Link} to={`${match.url}/${lote.id}`} color="link" size="sm">
+                      {lote.id}
+                    </Button>
+                  </td>
+                  <td>{lote.idLote}</td>
+                  <td>{lote.cNPJTransmissao}</td>
+                  <td>
+                    <TextFormat type="date" value={lote.dataTransmissao} format={APP_DATE_FORMAT} />
+                  </td>
+                  <td>{lote.numRecibo}</td>
+                  <td>
+                    {lote.xmlRetorno ? (
+                      <div>
+                        <a onClick={openFile(lote.xmlRetornoContentType, lote.xmlRetorno)}>
+                          <Translate contentKey="entity.action.open">Open</Translate>
+                          &nbsp;
+                        </a>
+                        <span>
+                          {lote.xmlRetornoContentType}, {byteSize(lote.xmlRetorno)}
+                        </span>
+                      </div>
+                    ) : null}
+                  </td>
+                  <td>
+                    <TextFormat type="date" value={lote.dataProc} format={APP_DATE_FORMAT} />
+                  </td>
+                  <td className="text-right">
+                    <div className="btn-group flex-btn-group-container">
+                      <Button tag={Link} to={`${match.url}/${lote.id}`} color="info" size="sm">
+                        <FontAwesomeIcon icon="eye" />{' '}
+                        <span className="d-none d-md-inline">
+                          <Translate contentKey="entity.action.view">View</Translate>
+                        </span>
+                      </Button>
+                      <Button tag={Link} to={`${match.url}/${lote.id}/edit`} color="primary" size="sm">
+                        <FontAwesomeIcon icon="pencil-alt" />{' '}
+                        <span className="d-none d-md-inline">
+                          <Translate contentKey="entity.action.edit">Edit</Translate>
+                        </span>
+                      </Button>
+                      <Button tag={Link} to={`${match.url}/${lote.id}/delete`} color="danger" size="sm">
+                        <FontAwesomeIcon icon="trash" />{' '}
+                        <span className="d-none d-md-inline">
+                          <Translate contentKey="entity.action.delete">Delete</Translate>
+                        </span>
+                      </Button>
+                    </div>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </Table>
+        </div>
+      </div>
+    );
+  }
+}
+
+const mapStateToProps = ({ lote }: IRootState) => ({
+  loteList: lote.entities
+});
+
+const mapDispatchToProps = {
+  getEntities
+};
+
+type StateProps = ReturnType<typeof mapStateToProps>;
+type DispatchProps = typeof mapDispatchToProps;
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Lote);

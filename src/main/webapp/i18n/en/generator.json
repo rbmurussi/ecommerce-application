@@ -1,0 +1,22 @@
+{
+  "ecommerceApplicationApp": {
+    "generator": {
+      "home": {
+        "title": "Generators",
+        "createLabel": "Create a new Generator",
+        "createOrEditLabel": "Create or edit a Generator"
+      },
+      "created": "A new Generator is created with identifier {{ param }}",
+      "updated": "A Generator is updated with identifier {{ param }}",
+      "deleted": "A Generator is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Generator {{ id }}?"
+      },
+      "detail": {
+        "title": "Generator"
+      },
+      "genKey": "Gen Key",
+      "genValue": "Gen Value"
+    }
+  }
+}

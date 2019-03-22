@@ -1,0 +1,27 @@
+{
+  "ecommerceApplicationApp": {
+    "cancelamento": {
+      "home": {
+        "title": "Cancelamentos",
+        "createLabel": "Create a new Cancelamento",
+        "createOrEditLabel": "Create or edit a Cancelamento"
+      },
+      "created": "A new Cancelamento is created with identifier {{ param }}",
+      "updated": "A Cancelamento is updated with identifier {{ param }}",
+      "deleted": "A Cancelamento is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Cancelamento {{ id }}?"
+      },
+      "detail": {
+        "title": "Cancelamento"
+      },
+      "idNotalFiscal": "Id Notal Fiscal",
+      "numeroProtocolo": "Numero Protocolo",
+      "protocolo": "Protocolo",
+      "dataProtocolo": "Data Protocolo",
+      "codigoErro": "Codigo Erro",
+      "mensagemErro": "Mensagem Erro",
+      "justificativa": "Justificativa"
+    }
+  }
+}

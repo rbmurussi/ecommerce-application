@@ -1,0 +1,22 @@
+{
+  "ecommerceApplicationApp": {
+    "parametros": {
+      "home": {
+        "title": "Parametros",
+        "createLabel": "Criar novo Parametros",
+        "createOrEditLabel": "Criar ou editar Parametros"
+      },
+      "created": "Um novo Parametros foi criado com o identificador {{ param }}",
+      "updated": "Um Parametros foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Parametros foi deletado com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Parametros {{ id }}?"
+      },
+      "detail": {
+        "title": "Parametros"
+      },
+      "parametrosEnum": "Parametros Enum",
+      "valor": "Valor"
+    }
+  }
+}

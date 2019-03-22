@@ -1,0 +1,23 @@
+{
+  "ecommerceApplicationApp": {
+    "controleversao": {
+      "home": {
+        "title": "Controleversaos",
+        "createLabel": "Criar novo Controleversao",
+        "createOrEditLabel": "Criar ou editar Controleversao"
+      },
+      "created": "Um novo Controleversao foi criado com o identificador {{ param }}",
+      "updated": "Um Controleversao foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Controleversao foi deletado com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Controleversao {{ id }}?"
+      },
+      "detail": {
+        "title": "Controleversao"
+      },
+      "idControleversao": "Id Controleversao",
+      "numversaoEnum": "Numversao Enum",
+      "dataversao": "Dataversao"
+    }
+  }
+}

@@ -1,0 +1,69 @@
+{
+    "name": "Evento",
+    "fields": [
+        {
+            "fieldName": "idEvento",
+            "fieldType": "Long",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "idNotalFiscal",
+            "fieldType": "Long",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "tpEvento",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength",
+                "required"
+            ],
+            "fieldValidateRulesMaxlength": 7
+        },
+        {
+            "fieldName": "nSeqEvento",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "dataEvento",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "numProtocolo",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 15
+        },
+        {
+            "fieldName": "xmlProc",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "any",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "dataRegEvento",
+            "fieldType": "ZonedDateTime"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20190322132958",
+    "entityTableName": "evento",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

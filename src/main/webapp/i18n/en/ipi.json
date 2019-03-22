@@ -1,0 +1,25 @@
+{
+  "ecommerceApplicationApp": {
+    "ipi": {
+      "home": {
+        "title": "Ipis",
+        "createLabel": "Create a new Ipi",
+        "createOrEditLabel": "Create or edit a Ipi"
+      },
+      "created": "A new Ipi is created with identifier {{ param }}",
+      "updated": "A Ipi is updated with identifier {{ param }}",
+      "deleted": "A Ipi is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Ipi {{ id }}?"
+      },
+      "detail": {
+        "title": "Ipi"
+      },
+      "idIpi": "Id Ipi",
+      "clEnq": "Cl Enq",
+      "cNPJProd": "C NPJ Prod",
+      "cEnq": "C Enq",
+      "idProduto": "Id Produto"
+    }
+  }
+}

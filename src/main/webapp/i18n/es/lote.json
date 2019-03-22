@@ -1,0 +1,26 @@
+{
+  "ecommerceApplicationApp": {
+    "lote": {
+      "home": {
+        "title": "Lotes",
+        "createLabel": "Crear nuevo Lote",
+        "createOrEditLabel": "Crear o editar Lote"
+      },
+      "created": "Un nuevo Lote ha sido creado con el identificador {{ param }}",
+      "updated": "Un Lote ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Lote ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Lote {{ id }}?"
+      },
+      "detail": {
+        "title": "Lote"
+      },
+      "idLote": "Id Lote",
+      "cNPJTransmissao": "C NPJ Transmissao",
+      "dataTransmissao": "Data Transmissao",
+      "numRecibo": "Num Recibo",
+      "xmlRetorno": "Xml Retorno",
+      "dataProc": "Data Proc"
+    }
+  }
+}

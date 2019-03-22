@@ -1,0 +1,37 @@
+{
+  "ecommerceApplicationApp": {
+    "produto": {
+      "home": {
+        "title": "Produtos",
+        "createLabel": "Crear nuevo Produto",
+        "createOrEditLabel": "Crear o editar Produto",
+        "search": "Search for Produto"
+      },
+      "created": "Un nuevo Produto ha sido creado con el identificador {{ param }}",
+      "updated": "Un Produto ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Produto ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Produto {{ id }}?"
+      },
+      "detail": {
+        "title": "Produto"
+      },
+      "cProd": "C Prod",
+      "idProduto": "Id Produto",
+      "xProd": "X Prod",
+      "cEAN": "C EAN",
+      "nCM": "N CM",
+      "exTipi": "Ex Tipi",
+      "genero": "Genero",
+      "uCom": "U Com",
+      "cEANTrib": "C EAN Trib",
+      "uTrib": "U Trib",
+      "vUNCom": "V UN Com",
+      "vUNTrib": "V UN Trib",
+      "qTrib": "Q Trib",
+      "idEmitente": "Id Emitente",
+      "versao": "Versao",
+      "cest": "Cest"
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "ecommerceApplicationApp": {
+    "icms": {
+      "home": {
+        "title": "Icms",
+        "createLabel": "Crear nuevo Icms",
+        "createOrEditLabel": "Crear o editar Icms"
+      },
+      "created": "Un nuevo Icms ha sido creado con el identificador {{ param }}",
+      "updated": "Un Icms ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Icms ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Icms {{ id }}?"
+      },
+      "detail": {
+        "title": "Icms"
+      },
+      "idIcms": "Id Icms",
+      "orig": "Orig",
+      "idProduto": "Id Produto",
+      "cst": "Cst",
+      "modBc": "Mod Bc",
+      "pREDBC": "P REDBC",
+      "pICMS": "P ICMS",
+      "modBCST": "Mod BCST",
+      "pMVAST": "P MVAST",
+      "pRedBCST": "P Red BCST",
+      "pICMSST": "P ICMSST",
+      "motDesICMS": "Mot Des ICMS",
+      "pBCOP": "P BCOP",
+      "uFST": "U FST",
+      "pCredSN": "P Cred SN"
+    }
+  }
+}
